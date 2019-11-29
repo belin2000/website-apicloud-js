@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+
+</body>
+<script type="text/javascript" src="../../script/api.js"></script>
+<script src="../config.js"></script>
+<script src="strong.js"></script>
+<script>
+apiready = function(){
+    var sto = new Strongs("apidb"); //没有参数则用config.logintype的值为参数， 也可以使用 cookies，localstroge，sessionstorage，indexeddb，websql，(apicloud支持下面两种) apifile和apidb
+    //sto.set("key", "val",
+    //    function (val) { console.log('成功'); console.log() },
+    //    function (err) { console.log('错误时候要做的') }); //单一设置数据
+    //sto.setlist([["key1", "val1"], ["key2", "val2"]],
+    //    function (val) { console.log('成功'); console.log() },
+    //    function (err) { console.log('错误时候要做的') }); //批量设置数据
+    sto.get("key",
+        function (val) { console.log('成功'); console.log(val) },
+        function (err) { console.log('错误时候要做的') }); //单一读取数据
+    sto.getlist(["key", "key1", "key2","key5"],
+        function (val) {
+            console.log('成功'); console.log(JSON.stringify(val))
+            for (var i = 0; i < val.length; i++) {
+                console.log(val[i][1]);
+            }
+        },
+        function (err) { console.log('错误时候要做的') }
+        );//批量读取数据
+    sto.delete("key",
+        function (val) { console.log('成功'); console.log() },
+        function (err) { console.log('错误时候要做的') }) //删除单一数据
+
+    sto.deletelist(["key5", "key1"],
+        function (val) { console.log('成功'); console.log() },
+        function (err) { console.log('错误时候要做的') }) //批量单一数据
+}
+</script>
+</html>

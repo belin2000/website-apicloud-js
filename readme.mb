@@ -1,0 +1,31 @@
+# js for website(h5) and apicloud, 
+公用的网页和apicloud下的js框架库。目的方便一套代码，全站通用。只需要修改小量的配置就能达到效果
+
+联系QQ：63905649
+联系邮箱:belin2000@qq.com
+源码：github.com/belin2000/website-apicloude-js
+
+
+#ver 1.0.3
+目前版本：1.0.3
+
+
+# e.g
+说明：
+config.js （全站配置，不同的环境配置不同的）相关说明在js里面
+
+strong.js (本地存储)
+cookies.js(cookies存储)
+
+
+其他js在后续陆续添加
+
+
+#how to use
+如何使用：
+一：本地存储
+	1，首先，在页面引入config.js ,如果你需要cookies保存数据的话，引入cookies.js
+	2,引入strong.js
+
+	3,根据strong.js里面的说明进行增加，读取，删除
+	可以参考文件夹 strong的例子（除apicloud外，必须在网站下运行）
